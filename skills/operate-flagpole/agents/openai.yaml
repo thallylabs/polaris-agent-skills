@@ -1,0 +1,4 @@
+interface:
+  display_name: "Operate Flagpole"
+  short_description: "Manage Flagpole flags, rollouts, and webhooks"
+  default_prompt: "Use $operate-flagpole to safely make and verify this Flagpole API change."

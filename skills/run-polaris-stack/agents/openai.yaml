@@ -1,0 +1,4 @@
+interface:
+  display_name: "Run Polaris Stack"
+  short_description: "Cache Flagpole decisions safely with Drift"
+  default_prompt: "Use $run-polaris-stack to combine Flagpole and Drift for this service."

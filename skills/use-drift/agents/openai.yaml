@@ -1,0 +1,4 @@
+interface:
+  display_name: "Use Drift"
+  short_description: "Build with Drift's embedded typed key-value store"
+  default_prompt: "Use $use-drift to design this Node.js storage workflow with Drift."

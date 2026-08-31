@@ -1,0 +1,14 @@
+{
+  "name": "polaris-agent-skills",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Public agent skills for Flagpole and Drift",
+  "type": "module",
+  "scripts": {
+    "test": "node scripts/validate-skills.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "license": "MIT"
+}
