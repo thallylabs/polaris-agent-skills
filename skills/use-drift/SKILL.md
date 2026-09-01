@@ -47,6 +47,12 @@ Invalid limits fail immediately. `maxEntries`, `defaultTtlMs`, and per-write
 `keys()`, `values()`, and `entries()` return live entries from least- to
 most-recently-used. `isEmpty()` and `size()` exclude expired values.
 
+`stats()` reclaims expired entries, then returns a `DriftStoreStats` snapshot
+with `liveEntries`, `expiringEntries`, `maxEntries`, and `availableEntries`
+without changing LRU recency. Because namespaces share one backing store,
+`stats()` on a namespace returns the same store-wide counters as on the root.
+For an unlimited store, `maxEntries` and `availableEntries` are `undefined`.
+
 ## Scope related keys
 
 `store.namespace("users")` creates a view over the same store. It prefixes keys
