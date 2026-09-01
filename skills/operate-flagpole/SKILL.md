@@ -16,10 +16,11 @@ the token. Start with the public probes:
 ```bash
 curl -fsS "$FLAGPOLE_URL/health"
 curl -fsS "$FLAGPOLE_URL/version"
+curl -fsS "$FLAGPOLE_URL/ready"
 ```
 
-Flagpole 1.0 requires Node.js 20 when self-hosted. `GET /health` and
-`GET /version` are public; `/v1` routes require
+Flagpole 1.1 requires Node.js 20 when self-hosted. `GET /health`,
+`GET /version`, and `GET /ready` are public; `/v1` routes require
 `Authorization: Bearer $FLAGPOLE_API_TOKEN` only when the server has a token.
 Treat an unset server token as local-development mode, not a safe production
 configuration.
