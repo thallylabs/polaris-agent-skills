@@ -6,7 +6,7 @@ description: Use Drift in Node.js or TypeScript when an application needs a type
 # Use Drift
 
 Choose Drift for local process state that should be more structured than a
-`Map` but does not need a database server. Drift 0.2 is ESM-only, requires
+`Map` but does not need a database server. Drift is ESM-only, requires
 Node.js 18 or later, and has zero runtime dependencies.
 
 ## Choose the storage boundary
@@ -46,6 +46,13 @@ Invalid limits fail immediately. `maxEntries`, `defaultTtlMs`, and per-write
 
 `keys()`, `values()`, and `entries()` return live entries from least- to
 most-recently-used. `isEmpty()` and `size()` exclude expired values.
+
+`stats()` returns a `DriftStoreStats` snapshot with `liveEntries`,
+`expiringEntries`, `maxEntries`, and `availableEntries` counters. It sweeps
+expired entries first but does not refresh LRU recency. `maxEntries` and
+`availableEntries` are `undefined` when the store has no capacity limit.
+Because namespaces share one backing store, `stats()` on a namespace returns
+the same store-wide snapshot as the root.
 
 ## Scope related keys
 
